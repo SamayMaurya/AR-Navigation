@@ -50,5 +50,6 @@ public class AddWaypoint :WaypointElement, IWaypoint
 
     public void AddBreadCrumbs(Vector3 pose){
         logger.Log($"the coordinates received are = x: {pose.x} y: {pose.y} z: {pose.z}");
+        Instantiate(breadcrumbPrefab, pose, Quaternion.identity);
     }
 }
