@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IWaypoint
 {
-   
+   public void AddBreadCrumbs(Vector3 pose);
 }

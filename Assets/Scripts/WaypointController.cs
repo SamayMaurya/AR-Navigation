@@ -1,18 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class WaypointController : MonoBehaviour
+public class WaypointController : WaypointElement
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private Logger logger = new Logger(true, "WAYPOINT_CONTROLLER");
+    public void AddWaypoint(){
+        Vector3 pose = app.model.AddWaypoint();
+        app.view.AddBreadCrumbs(pose);
+    }    
 }

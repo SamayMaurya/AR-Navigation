@@ -29,7 +29,6 @@ public class AddWaypoint :WaypointElement, IWaypoint
         _visElemLogs=_root.Q<VisualElement>("VisElemLogs");
         _svLogs=_root.Q<ScrollView>("SVLogs");
         _openLogs=_root.Q<VisualElement>("LogState");
-        _openLogs.RegisterCallback<ClickEvent>(evt=>SetLogState());
         _btnTigger.RegisterCallback<ClickEvent>(evt=>OnTiggerButtonClick());
     }
 
@@ -43,42 +42,13 @@ public class AddWaypoint :WaypointElement, IWaypoint
     //----------------------------//
     private void OnTiggerButtonClick()
     {
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        RaycastHit hit;
-        int layerMask = LayerMask.GetMask("BreadCrumb");
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
-        {
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("BreadCrumb"))
-            {
-                //TODO: delete breadcrumbs
-            }
-            else{
-                GameObject spawnedGO = Instantiate(breadcrumbPrefab, hit.point, Quaternion.identity);
-                float scale = 1f / spawnedGO.transform.parent.lossyScale.x * anchorScale;
-                spawnedGO.transform.localScale = new Vector3(scale, scale, scale);
-                Quaternion spawnedGORotation = spawnedGO.transform.localRotation;
-                Vector3 spawnedGOPosition = spawnedGO.transform.localPosition;
-                AddLogs(spawnedGOPosition,spawnedGORotation);
-            }
-        }
-    }
-
-    private void SetLogState(){
-        if(_visElemLogs.resolvedStyle.display ==DisplayStyle.Flex){
-            _visElemLogs.style.display=DisplayStyle.None;
-        }
-        else{
-            _visElemLogs.style.display=DisplayStyle.Flex;
-        }
-    }
-
-    private void AddLogs(Vector3 pos,Quaternion rotation){
-        Label log = new Label();
-        log.style.color=Color.red;
-        log.text=$"coordiates : X: {pos.x}, y: {pos.y}, z: {pos.z}";
-        _svLogs.Add(log);
+       app.controller.AddWaypoint();
     }
     //-----------------------------//
     //-------public Methods-------//
     //----------------------------//
+
+    public void AddBreadCrumbs(Vector3 pose){
+        logger.Log($"the coordinates received are = x: {pose.x} y: {pose.y} z: {pose.z}");
+    }
 }
