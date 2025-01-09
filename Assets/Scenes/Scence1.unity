@@ -743,7 +743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &863297430
 Transform:
   m_ObjectHideFlags: 0
@@ -1382,11 +1382,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1812745677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 552db1585ad501c48a14b4d2954cce06, type: 3}
+  m_Script: {fileID: 11500000, guid: a11e5612fd4312d4fab900e4a95d084e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  app: {fileID: 0}
-  breadcrumbPrefab: {fileID: 1253323013315375757, guid: e513be39420c114459e7e8e6335eb9bb, type: 3}
+  app: {fileID: 224255913}
+  breadcrumbPrefab: {fileID: 399970598}
 --- !u!1 &1951874654
 GameObject:
   m_ObjectHideFlags: 0
