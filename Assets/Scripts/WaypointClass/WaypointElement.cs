@@ -8,6 +8,7 @@ public class WaypointElement : BaseElement
     public WaypointApplication app;
     protected virtual void Start()
     {
+        Debug.Log("waypoint element init");
         app = GameObject.FindObjectOfType<WaypointApplication>();
     }
 }
