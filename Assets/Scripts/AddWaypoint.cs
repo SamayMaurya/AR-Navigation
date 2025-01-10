@@ -49,7 +49,7 @@ public class AddWaypoint : WaypointElement, IWaypoint
 
         // Register callbacks
         _btnTrigger.RegisterCallback<ClickEvent>(evt => OnTriggerButtonClick());
-        //_btnAddDestination.RegisterCallback<ClickEvent>(evt => OnAddDestinationButtonClick());
+        _btnAddDestination.RegisterCallback<ClickEvent>(evt => OnAddDestinationButtonClick());
         _btnCompleteMapping.RegisterCallback<ClickEvent>(evt => OnCompleteMappingButtonClick());
 
         // Initialize lastBreadcrumbPosition to start at the camera's initial position
