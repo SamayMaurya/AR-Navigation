@@ -4,8 +4,12 @@
             <ui:ScrollView name="SVLogs" />
         </ui:VisualElement>
         <ui:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: column; justify-content: flex-end;">
-            <ui:VisualElement name="VisElemTrigger" style="flex-grow: 0; align-self: center; flex-direction: row; width: 184px; height: 119px; background-color: rgba(0, 0, 0, 0); margin-bottom: 40px; background-image: url(&quot;project://database/Assets/Icons/Group%201%20(1).png?fileID=2800000&amp;guid=beab2b6150ac7e04492a1c8a0cfcbf08&amp;type=3#Group 1 (1)&quot;); -unity-background-scale-mode: scale-to-fit;" />
-            <ui:VisualElement name="LogState" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Icons/Group%209.png?fileID=2800000&amp;guid=af1ff6f48779f104d8a9416fb745c8a4&amp;type=3#Group 9&quot;); height: 97px; width: 112px; background-color: rgba(0, 0, 0, 0.6);" />
+            <ui:VisualElement style="flex-grow: 0; flex-direction: row; justify-content: center;">
+                <ui:VisualElement name="AddDestination" style="flex-grow: 0; align-self: center; flex-direction: row; width: 184px; height: 119px; background-color: rgba(0, 0, 0, 0); margin-bottom: 40px; background-image: url(&quot;project://database/Assets/Unity-Logs-Viewer/Reporter/Images/error_icon.png?fileID=2800000&amp;guid=7640ebf8b3a92124d821d3b4b8b3fd7e&amp;type=3#error_icon&quot;); -unity-background-scale-mode: scale-to-fit;" />
+                <ui:VisualElement name="VisElemTrigger" style="flex-grow: 0; align-self: center; flex-direction: row; width: 184px; height: 119px; background-color: rgba(0, 0, 0, 0); margin-bottom: 40px; background-image: url(&quot;project://database/Assets/Icons/Group%201%20(1).png?fileID=2800000&amp;guid=beab2b6150ac7e04492a1c8a0cfcbf08&amp;type=3#Group 1 (1)&quot;); -unity-background-scale-mode: scale-to-fit;" />
+                <ui:VisualElement name="CompleteMapping" style="flex-grow: 0; align-self: center; flex-direction: row; width: 184px; height: 119px; background-color: rgba(0, 0, 0, 0); margin-bottom: 40px; background-image: url(&quot;project://database/Assets/Unity-Logs-Viewer/Reporter/Images/clear.png?fileID=2800000&amp;guid=112c6fcf56e349449ab2e6ad76b67816&amp;type=3#clear&quot;); -unity-background-scale-mode: scale-to-fit;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="LogState" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Icons/Group%209.png?fileID=2800000&amp;guid=af1ff6f48779f104d8a9416fb745c8a4&amp;type=3#Group 9&quot;); height: 97px; width: 112px; background-color: rgba(0, 0, 0, 0.6); display: none;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

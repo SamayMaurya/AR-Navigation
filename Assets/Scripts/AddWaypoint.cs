@@ -35,7 +35,7 @@ public class AddWaypoint : WaypointElement, IWaypoint
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
     protected override void Start()
-    {
+    {   
         base.Start();
         _root = GetComponentInChildren<UIDocument>().rootVisualElement;
 
