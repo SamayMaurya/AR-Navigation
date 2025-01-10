@@ -109,7 +109,8 @@ public class AddWaypoint : WaypointElement, IWaypoint
     private Vector3 GetCurrentPosition()
     {
         // TODO: Implement raycast or AR camera position retrieval
-        return Camera.main.transform.position;
+        return app.controller.AddWaypoint();
+        //return Camera.main.transform.position;
     }
 
     private void DisplayMappingSummary()
