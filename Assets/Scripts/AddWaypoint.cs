@@ -53,6 +53,7 @@ public class AddWaypoint : WaypointElement, IWaypoint
         _btnCompleteMapping.RegisterCallback<ClickEvent>(evt => OnCompleteMappingButtonClick());
 
         // Initialize lastBreadcrumbPosition to start at the camera's initial position
+        app.controller.InitApp();
         lastBreadcrumbPosition = GetCurrentPosition();
     }
 
