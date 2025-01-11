@@ -251,6 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   app: {fileID: 0}
   arRaycastManager: {fileID: 817212672}
+  aRPlaneManager: {fileID: 817212670}
 --- !u!1 &514027227
 GameObject:
   m_ObjectHideFlags: 0

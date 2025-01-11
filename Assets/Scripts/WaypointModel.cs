@@ -7,10 +7,16 @@ public class WaypointModel : WaypointElement
 {
     private Logger logger = new Logger(true, "WAYPOINT_MODEL");
     [SerializeField] private ARRaycastManager arRaycastManager;
+    [SerializeField] private ARPlaneManager aRPlaneManager;
      private List<ARRaycastHit> hits = new List<ARRaycastHit>();
     public Vector3 AddWaypoint(){
         Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, 0);
-        
+
+        if (aRPlaneManager.trackables.count == 0)
+        {
+            logger.Log("No planes detected yet.");
+            return new Vector3(0, 0, 0);
+        }
         if (arRaycastManager.Raycast(screenCenter, hits, TrackableType.Planes))
         {
             Pose hitPose = hits[0].pose;

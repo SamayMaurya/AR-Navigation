@@ -54,7 +54,7 @@ public class AddWaypoint : WaypointElement, IWaypoint
 
         // Initialize lastBreadcrumbPosition to start at the camera's initial position
         app.controller.InitApp();
-        lastBreadcrumbPosition = GetCurrentPosition();
+        //lastBreadcrumbPosition = GetCurrentPosition();
     }
 
     void Update()
@@ -71,7 +71,7 @@ public class AddWaypoint : WaypointElement, IWaypoint
         logger.Log("Breadcrumb placement started.");
 
         // Initialize last position when starting to place breadcrumbs
-        lastBreadcrumbPosition = GetCurrentPosition();
+        //lastBreadcrumbPosition = GetCurrentPosition();
     }
 
     private void OnAddDestinationButtonClick()
@@ -94,11 +94,18 @@ public class AddWaypoint : WaypointElement, IWaypoint
         Vector3 currentPosition = GetCurrentPosition();
 
         // Check if the distance from the last breadcrumb position is greater than or equal to 1 meter
-        if (Vector3.Distance(lastBreadcrumbPosition, currentPosition) >= breadcrumbInterval)
-        {
-            AddBreadCrumbs(currentPosition);
-            lastBreadcrumbPosition = currentPosition; // Update last position to current position
+        if(lastBreadcrumbPosition!=null){
+            if (Vector3.Distance(lastBreadcrumbPosition, currentPosition) >= breadcrumbInterval)
+            {
+                AddBreadCrumbs(currentPosition);
+                lastBreadcrumbPosition = currentPosition; // Update last position to current position
+            }
         }
+        else{
+            AddBreadCrumbs(currentPosition);
+            lastBreadcrumbPosition = currentPosition;
+        }
+       
     }
 
     private string GetDestinationNameFromUI()
