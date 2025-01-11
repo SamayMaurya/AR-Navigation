@@ -59,17 +59,17 @@ public class AddWaypoint : WaypointElement, IWaypoint
 
     void Update()
     {
-        if (isPlacingBreadcrumbs)
-        {
-            PlaceBreadcrumbsAutomatically();
-        }
+        // if (isPlacingBreadcrumbs)
+        // {
+        //     PlaceBreadcrumbsAutomatically();
+        // }
     }
 
     private void OnTriggerButtonClick()
     {
         isPlacingBreadcrumbs = true;
         logger.Log("Breadcrumb placement started.");
-
+        AddBreadCrumbs(app.controller.AddWaypoint());
         // Initialize last position when starting to place breadcrumbs
         //lastBreadcrumbPosition = GetCurrentPosition();
     }
